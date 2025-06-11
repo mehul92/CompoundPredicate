@@ -20,9 +20,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/noahkamara/swift-xctesting", branch: "main"),
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.1.0"),
-        .package(url: "https://github.com/pointfreeco/swift-issue-reporting", from: "1.2.2")
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.1.0")
     ],
     targets: [
         .target(
@@ -30,18 +28,6 @@ let package = Package(
             dependencies: [
                 .product(name: "IssueReporting", package: "swift-issue-reporting")
             ]
-        ),
-        .testTarget(
-            name: "CompoundPredicateTests",
-            dependencies: ["CompoundPredicate"]
-//            linkerSettings: [
-//                .unsafeFlags([
-//                    "-Xlinker", "-sectcreate",
-//                    "-Xlinker", "__TEXT",
-//                    "-Xlinker", "__info_plist",
-//                    "-Xlinker", "Tests/Info.plist",
-//                ])
-//            ]
         ),
     ]
 )
